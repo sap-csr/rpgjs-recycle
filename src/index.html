@@ -12,6 +12,7 @@
             max-width: 800px;
             margin: auto;
         }
+
         .navbar {
             background: linear-gradient(to right, #4682B4, #87CEFA);
             overflow: auto;
@@ -20,6 +21,7 @@
             height: 75px;
             box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
         }
+
         .navbar a {
             float: left;
             display: block;
@@ -31,38 +33,45 @@
             font-size: 1.5em;
             transition: transform 0.5s;
         }
+
         .navbar img {
             height: 50px;
             width: auto;
             margin-right: 10px;
         }
+
         .navbar a:hover {
             color: black;
             transform: translateY(5px);
         }
 
         #virtual-enter {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4682B4;
+            display: block;
+            padding: 20px 40px;
+            background: linear-gradient(to right, #4682B4, #87CEFA);
             color: white;
             border: none;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
+            font-size: 1.5em;
             transition: transform 0.5s;
+            margin: 0 auto;
         }
     </style>
 
     <meta charset="utf-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="viewport" content="width=1200, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 </head>
 
 <body style="background-color: #f8f8f8;">
     <div class="navbar">
-        <a href="https://www.sap.com/korea/sustainability.html">SAP</a>
+        <a href="https://www.sap.com/korea/sustainability.html">SAP.지속가능한</a>
         <!--<a href="https://www.miricanvas.com/v/127zkyv?mode=templateshare">ECO Planters</a>-->
         <a href="https://www.instagram.com/explore/tags/에코플랜터즈/">#에코플랜터즈</a>
     </div>
@@ -71,57 +80,47 @@
             <div id="rpg"></div>
         </div>
         <div id="myContainer">
-        <div id="lv-container" data-id="city" data-uid="MTAyMC81ODczNi8zNTE5OA==">
-            <script type="text/javascript">
-           (function(d, s) {
-               var j, e = d.getElementsByTagName(s)[0];
-        
-               if (typeof LivereTower === 'function') { return; }
-        
-               j = d.createElement(s);
-               j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-               j.async = true;
-        
-               e.parentNode.insertBefore(j, e);
-           })(document, 'script');
-            </script>
+            <button id="virtual-enter">Enter</button>
         </div>
-</div>
+        <div id="myContainer">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC81ODczNi8zNTE5OA==">
+                <script type="text/javascript">
+                    (function (d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+
+                        if (typeof LivereTower === 'function') { return; }
+
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+            </div>
+        </div>
     </div>
-    
-    <button id="virtual-enter">Enter</button>
-    
+
+
     <style>
         body,
         html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #f8f8f8; 
+            background-color: #f8f8f8;
         }
 
         #rpg {
             position: relative;
-        }
-
-        @media (min-width: 300px) {
-            #rpg {
-                width: 816px;
-                height: 624px;
-            }
-        }
-
-        @media (max-width: 800px) {
-            #rpg {
-                width: 100%;
-                height: 100%;
-            }
+            width: 816px;
+            height: 624px;
         }
     </style>
 
     <script>
         // Handle the click event on the virtual Enter button
-        document.getElementById("virtual-enter").addEventListener("click", function(){
+        document.getElementById("virtual-enter").addEventListener("click", function () {
             // Create a new 'Enter' key event
             var event = new KeyboardEvent('keydown', {
                 key: 'Enter',
@@ -138,4 +137,3 @@
 </body>
 
 </html>
-

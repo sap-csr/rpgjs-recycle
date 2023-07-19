@@ -15,5 +15,5 @@ echo "end-deploy done"
 echo ""
 
 echo "start-deploy begin"
-sudo docker container run --name rpgjs-recycle -p 80:3000 -p 443:3000 -d rpg 
+sudo docker container run --name rpgjs-recycle -p 3000:3000 -d rpg 
 echo "start-deploy done"

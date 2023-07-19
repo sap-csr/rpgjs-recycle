@@ -6,6 +6,6 @@ import gamepad from '@rpgjs/gamepad'
 export default [
     main,
     defaultGui,
-    //mobileGui,
+    mobileGui
     //gamepad
 ]

@@ -6,10 +6,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
         #myContainer {
-            background-color: white;
+            background-color: #f8f8f8;
             padding: 20px;
             border: 2px solid white;
-            max-width: 800px;  /* adjust this as necessary */
+            max-width: 800px;
             margin: auto;
         }
         .navbar {
@@ -17,7 +17,7 @@
             overflow: auto;
             position: sticky;
             top: 0;
-            height: 75px; /* Increased height of the navbar */
+            height: 75px;
             box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
         }
         .navbar a {
@@ -25,7 +25,7 @@
             display: block;
             color: #f2f2f2;
             text-align: center;
-            padding: 20px 16px; /* Increased padding to match the height */
+            padding: 20px 16px;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
             font-size: 1.5em;
@@ -40,6 +40,19 @@
             color: black;
             transform: translateY(5px);
         }
+
+        #virtual-enter {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            transition: transform 0.5s;
+        }
     </style>
 
     <meta charset="utf-8">
@@ -49,14 +62,15 @@
 
 <body style="background-color: #f8f8f8;">
     <div class="navbar">
-        <a href="https://www.sap.com/korea/sustainability.html">SAP:사회적책임</a>
-        <a href="https://www.miricanvas.com/v/127zkyv?mode=templateshare">ECO Planters</a>
-        <a href="https://www.instagram.com/explore/tags/에코플랜터즈/">#인스타그램</a>
+        <a href="https://www.sap.com/korea/sustainability.html">SAP</a>
+        <!--<a href="https://www.miricanvas.com/v/127zkyv?mode=templateshare">ECO Planters</a>-->
+        <a href="https://www.instagram.com/explore/tags/에코플랜터즈/">#에코플랜터즈</a>
     </div>
     <div>
         <div id="myContainer">
             <div id="rpg"></div>
         </div>
+        <div id="myContainer">
         <div id="lv-container" data-id="city" data-uid="MTAyMC81ODczNi8zNTE5OA==">
             <script type="text/javascript">
            (function(d, s) {
@@ -71,10 +85,11 @@
                e.parentNode.insertBefore(j, e);
            })(document, 'script');
             </script>
-        <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
         </div>
+</div>
     </div>
     
+    <button id="virtual-enter">Enter</button>
     
     <style>
         body,
@@ -89,7 +104,7 @@
             position: relative;
         }
 
-        @media (min-width: 800px) {
+        @media (min-width: 300px) {
             #rpg {
                 width: 816px;
                 height: 624px;
@@ -98,11 +113,28 @@
 
         @media (max-width: 800px) {
             #rpg {
-                width: 90%;
-                height: 90%;
+                width: 100%;
+                height: 100%;
             }
         }
     </style>
+
+    <script>
+        // Handle the click event on the virtual Enter button
+        document.getElementById("virtual-enter").addEventListener("click", function(){
+            // Create a new 'Enter' key event
+            var event = new KeyboardEvent('keydown', {
+                key: 'Enter',
+                code: 'Enter',
+                keyCode: 13,
+                charCode: 13,
+                shiftKey: false
+            });
+
+            // Dispatch the event
+            document.dispatchEvent(event);
+        });
+    </script>
 </body>
 
 </html>

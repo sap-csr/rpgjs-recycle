@@ -1,130 +1,148 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Expires" content="0" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<script src="https://cdn.tailwindcss.com"></script>
 
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-			.navbar {
-				background: linear-gradient(to right, #4682b4, #87cefa);
-				box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
-			}
-			.navbar a {
-				float: left;
-				display: block;
-				color: #f2f2f2;
-				text-align: center;
-				padding: 20px 16px;
-				text-decoration: none;
-				font-family: 'Roboto', sans-serif;
-				font-size: 1.5em;
-				transition: transform 0.5s;
-			}
-			.navbar img {
-				height: 50px;
-				width: auto;
-				margin-right: 10px;
-			}
-			.navbar a:hover {
-				color: black;
-				transform: translateY(5px);
-			}
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<script src="https://cdn.tailwindcss.com"></script>
 
-			#virtual-enter {
-				display: block;
-				padding: 20px 40px;
-				background: linear-gradient(to right, #4682B4, #87CEFA);
-				color: white;
-				border: none;
-				cursor: pointer;
-				text-align: center;
-				text-decoration: none;
-				font-family: 'Roboto', sans-serif;
-				font-size: 1.5em;
-				transition: transform 0.5s;
-				margin: 0 auto;
-			}
-		</style>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-		<meta charset="utf-8" />
-		<title><%= htmlWebpackPlugin.options.title %></title>
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height" />
-	</head>
+		.navbar {
+			background: linear-gradient(to right, #4682b4, #87cefa);
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+		}
 
-	<body style="background-color: #f8f8f8">
-		<div class="flex flex-col h-screen w-full">
-			<div class="navbar justify-start items-center w-full">
-				<a href="https://www.sap.com/korea/sustainability.html" class="text-lg text-black w-16">SAP</a>
-				<a href="https://www.instagram.com/explore/tags/에코플랜터즈/">#에코플랜터즈</a>
-			</div>
+		.navbar a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 20px 16px;
+			text-decoration: none;
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.5em;
+			transition: transform 0.5s;
+		}
 
-			<div id="rpg" class="!h-1/2 py-5 object-contain overflow-hidden"></div>
+		.navbar img {
+			height: 50px;
+			width: auto;
+			margin-right: 10px;
+		}
 
-			<div id="myContainer" class="overflow-auto h-1/3">
-				<div id="lv-container" data-id="city" data-uid="MTAyMC81ODczNi8zNTE5OA==">
-					<script type="text/javascript">
-						(function (d, s) {
-							var j,
-								e = d.getElementsByTagName(s)[0];
+		.navbar a:hover {
+			color: black;
+			transform: translateY(5px);
+		}
 
-							if (typeof LivereTower === 'function') {
-								return;
-							}
+		#virtual-enter {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #4682b4;
+			color: white;
+			border: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			font-family: 'Roboto', sans-serif;
+			transition: transform 0.5s;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-top: 10px;
+		}
 
-							j = d.createElement(s);
-							j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-							j.async = true;
+		#virtual-enter:hover {
+			transform: translateX(-50%) scale(1.1);
+		}
+	</style>
 
-							e.parentNode.insertBefore(j, e);
-						})(document, 'script');
-					</script>
-				</div>
+	<meta charset="utf-8" />
+	<title>
+		<%= htmlWebpackPlugin.options.title %>
+	</title>
+	<meta name="viewport"
+		content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height" />
+</head>
+
+<body style="background-color: #f8f8f8">
+	<div class="flex flex-col h-screen w-full">
+
+		<div class="navbar justify-start items-center w-full">
+			<a href="https://www.sap.com/korea/sustainability.html">SAP.지속가능한</a>
+			<a href="https://www.instagram.com/explore/tags/에코플랜터즈/">#에코플랜터즈</a>
+		</div>
+		<div id="rpg" class="!h-1/2 py-5 object-contain overflow-hidden"></div>
+
+		<div id="myContainer" class="w-full text-center">
+			<button id="virtual-enter">클릭하여 Enter를 입력하세요</button>
+		</div>
+
+		<div id="myContainer" class="overflow-auto h-1/3">
+			<div id="lv-container" data-id="city" data-uid="MTAyMC81ODczNi8zNTE5OA==">
+				<script type="text/javascript">
+					(function (d, s) {
+						var j,
+							e = d.getElementsByTagName(s)[0];
+
+						if (typeof LivereTower === 'function') {
+							return;
+						}
+
+						j = d.createElement(s);
+						j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+						j.async = true;
+
+						e.parentNode.insertBefore(j, e);
+					})(document, 'script');
+				</script>
 			</div>
 		</div>
-		<style>
-			body,
-			html {
-				margin: 0;
-				padding: 0;
-				height: 100%;
-				background-color: #f8f8f8;
-			}
+	</div>
 
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background-color: #f8f8f8;
+		}
+
+		#rpg {
+			position: relative;
+		}
+
+		@media (min-width: 300px) {
 			#rpg {
-				position: relative;
+				width: auto;
+				height: 80%;
 			}
+		}
 
-			@media (min-width: 300px) {
-				#rpg {
-					width: auto;
-					height: 80%;
-				}
+		@media (max-width: 800px) {
+			#rpg {
+				width: auto;
+				height: 80%;
 			}
+		}
+	</style>
 
-			@media (max-width: 800px) {
-				#rpg {
-					width: auto;
-					height: 80%;
-				}
-			}
-		</style>
-
-		<script>
-			document.getElementById("virtual-enter").addEventListener("click", function () {
-				var event = new KeyboardEvent('keydown', {
-					key: 'Enter',
-					code: 'Enter',
-					keyCode: 13,
-					charCode: 13,
-					shiftKey: false
-				});
-
-				// Dispatch the event
-				document.dispatchEvent(event);
+	<script>
+		document.getElementById('virtual-enter').addEventListener('click', function () {
+			var event = new KeyboardEvent('keydown', {
+				key: 'Enter',
+				code: 'Enter',
+				keyCode: 13,
+				charCode: 13,
+				shiftKey: false,
 			});
-		</script>
-	</body>
+			document.dispatchEvent(event);
+		});
+	</script>
+</body>
+
 </html>

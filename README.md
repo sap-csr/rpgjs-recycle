@@ -8,7 +8,7 @@ To run this project, you need to first install Node.js and set up the environmen
 
 ```bash
 pip install nodeenv
-nodeenv --node=14.17.0 env
+nodeenv --node=14.16.1 --npm=6.14.12 env
 source env/bin/activate
 ```
 
